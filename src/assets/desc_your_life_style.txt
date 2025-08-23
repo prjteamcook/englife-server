@@ -1,0 +1,24 @@
+  {
+    "idx": 1,  // 일련 번호  
+    "eng_title": "Fight fatigue",  // 영문
+    "kor_title": "피로와 싸우세요",  // 한글
+    // 영문 내용
+    "eng_content": "Are you tired? Fatigue may be caused by certain behaviors or habits but they can be easy to change. There are some common things that cause fatigue some easy and helpful tips to help you combat fatigue.<br>Do you exercise? Fitting in 30 minutes of exercise at least 4 times a week will improve you energy level and help you sleep better at night.<br>Do you sleep regularly? The more your sleeping patterns change from day to day, the more tired you'll become. Try to stay consistent about when you go to bed and wake – even on the weekends.<br>Are you drinking enough water? Dehydration causes your body to conserve energy by decreasing blood circulation. Be sure to drink eight glasses of water each day.<br>Do you slouch? Poor posture causes your body to work harder than it does when your body is aligned correctly. Make sure you are sitting or standing straight and stretch out your tired muscles periodically.<br>Do you have a sweet tooth? Simple sugars, found in junk food, may give you a quick boost of energy-but once it wears off, it will leave you more tired. Avoid too many sweets during the day.<br>Follow these simple tips to keep your energy levels high!<br>You’re listening to Your Lifestyle – brought to you by YBM Sisa.com.",
+    // 한글 내용
+    "kor_content": "피곤하세요? 피로는 특정한 행동이나 습관에 의해 야기될 수 있지만 이런 것들은 쉽게 바뀔 수 있습니다. 흔히 피로를 야기하는 것들과, 여러분이 피로와 싸우는 데에 도움이 되는 쉽고 유용한 팁들을 알려 드릴게요.<br>운동을 하세요? 일주일에 최소한 4번 이상 30분 동안 운동하면 여러분의 에너지 수준이 높아지며 밤에 잠을 잘 자는 데에 도움이 됩니다.<br>규칙적으로 잠을 주무시나요? 매일 수면 패턴이 바뀔수록 더 피곤해집니다. 잠을 자러 가는 시각과 일어나는 시각을 규칙적으로 하세요. 주말에도 말이죠.<br>물을 충분히 마시나요? 탈수는 혈액 순환을 저하시켜 여러분의 신체가 에너지를 보존하도록 만듭니다. 꼭 매일 여덟 잔의 물을 마시세요.<br>자세가 구부정한가요? 자세가 잘못되면 당신의 신체는 곧게 펴져 있을 때보다 더 힘들게 움직이게 됩니다. 반드시 똑바로 앉거나 서 있고, 주기적으로 당신의 지친 근육을 스트레칭해 주세요.<br>단 것을 좋아하세요? 정크 푸드에 있는 단당(simple sugar)은 에너지를 빨리 높여줄 수도 있지만, 사라지고 나면 여러분을 더욱 피곤하게 합니다. 낮 동안에는 너무 많은 당류 섭취를 피하세요.<br>이 간단한 방법을 따르셔서 당신의 에너지 수준을 높게 유지하세요.<br>여러분은 지금 YBM시사닷컴이 제공하는 생활(Your Lifestyle) 코너를 듣고 있습니다.",
+    // 컨텐츠 중 단어들
+    "words": [
+      {
+        "word": "consistent",
+        "mean": "일치하는, 양립하는"
+      },
+      {
+        "word": "dehydration",
+        "mean": "탈수, 건조, 탈수증"
+      },
+      {
+        "word": "slouch",
+        "mean": "앞으로 구부린 자세, 앞으로 수그림"
+      }
+    ]
+  },

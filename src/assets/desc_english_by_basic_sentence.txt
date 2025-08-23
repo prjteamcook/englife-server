@@ -1,0 +1,34 @@
+  {
+    "seq": 1, // 일련 번호
+    "lesson": "Lesson1", // lesson 
+    "lesson_title": "5가지 기본 문형", // lesson title
+    "expression_list": [ // 표현
+      {
+        "kor_expression": "~가 있었다",  // 한글 표현
+        "eng_expression": "There used to be ~<S＋V : 1형식>",  // 영문 표현
+        "example": "<i>There used to be</i> many tall poplars in front of the school buildings.",  // 예제
+        "basic_exercise_list": [ // 기본 응용
+          {
+            "kor_sentence": "내가 어렸을 때 우리 동네엔 오래된 절이 하나 있었다.",  // 제시 한글 문장
+            "eng_sentence1": "When I was young, there used to be an old temple in my neighborhood.", // 한글 문장을 표현 하는 영어 문장
+            "eng_sentence2": "",
+            "eng_sentence3": "",
+            "eng_sentence4": "",
+            "eng_sentence5": "",
+            "eng_sentence6": ""
+          },
+        ]
+      }
+    ],
+    "hard_exercise_list": [ // 심화 응용 
+      {
+        "kor_sentence": "우리 질문에 대답할 수 있는 사람은 아무도 없는 것처럼 보였다.", // 제시 한글 문장
+        "eng_sentence1": "① There <b>seemed</b>(= appeared) to be <b>nobody</b>(= no one) who could answer our question.", // 한글 문장을 표현 하는 영어 문장
+        "eng_sentence2": "② Nobody seemed to be able to answer our question.",
+        "eng_sentence3": "",
+        "eng_sentence4": "",
+        "eng_sentence5": "",
+        "eng_sentence6": ""
+      },
+    ]
+  }

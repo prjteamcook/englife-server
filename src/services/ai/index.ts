@@ -1,14 +1,3 @@
-import { ServiceSchema } from '@/services';
-import * as controller from './controller';
-
-export default <ServiceSchema>{
-  baseURL: '/ai',
-  name: 'ai',
-  routes: [
-    {
-      path: '/',
-      method: 'get',
-      handler: controller.pingpong,
-    },
-  ],
-};
+export { imageAnalysisService } from './image-analysis-service';
+export { dataContextBuilder } from './data-context-builder';
+export { default } from './service-definition';

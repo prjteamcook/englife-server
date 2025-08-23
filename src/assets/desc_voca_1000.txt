@@ -1,0 +1,13 @@
+
+  {
+    "seq": 668,  // 일련 번호
+    "search_word": "ABANDON", // 검색어
+    "word": "abandon", // 표제어
+    "word_meaning": "버리다, 포기하다, 넘겨주다", // 단어 풀이
+    "etc": "", // 추가 정보
+    "example": { // 예문
+      "example_eng": "When the rebel troops arrived, the village had already been abandoned.",
+      "example_kor": "반란군이 도착했을 때 사람들은 이미 그 마을을 버리고 떠난 뒤였다."
+    },
+    "level": "TOEFL,고교 필수 어휘" // 단어 레벨
+  }
