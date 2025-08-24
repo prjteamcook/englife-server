@@ -3,7 +3,7 @@ import config from './config';
 import { logger } from './resources';
 
 // default port: 3000
-const port: number = parseInt(config.port) || 3000;
+const port: number = typeof config.port === 'string' ? parseInt(config.port) : config.port;
 const { app } = new App();
 
 app

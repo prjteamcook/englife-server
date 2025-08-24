@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import { serviceRouter } from './services';
 import { logger } from './resources';
 import { errorHandler } from './middlewares';
+import config from './config';
 
 /**
  * @class App
@@ -36,8 +37,38 @@ class App {
   }
 
   private initializeMiddlewares() {
-    this.app.use(helmet());
-    this.app.use(cors());
+    this.app.use(helmet({
+      crossOriginResourcePolicy: { policy: "cross-origin" }
+    }));
+    
+    this.app.use(cors({
+      origin: config.cors_origin === '*' ? true : config.cors_origin.split(','),
+      credentials: true,
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+      allowedHeaders: [
+        'Content-Type', 
+        'Authorization', 
+        'X-Requested-With',
+        'Accept',
+        'Origin',
+        'Cache-Control',
+        'X-File-Name'
+      ],
+      exposedHeaders: ['Content-Length', 'X-Total-Count'],
+      maxAge: 86400, // 24시간
+      preflightContinue: false,
+      optionsSuccessStatus: 204
+    }));
+    
+    // OPTIONS 요청에 대한 명시적 처리
+    this.app.options('*', (req, res) => {
+      res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+      res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS,PATCH');
+      res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin,Cache-Control,X-File-Name');
+      res.header('Access-Control-Allow-Credentials', 'true');
+      res.sendStatus(204);
+    });
+    
     this.app.use(
       express.json({
         limit: '20mb',
