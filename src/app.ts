@@ -57,17 +57,17 @@ class App {
       exposedHeaders: ['Content-Length', 'X-Total-Count'],
       maxAge: 86400, // 24시간
       preflightContinue: false,
-      optionsSuccessStatus: 204
+      optionsSuccessStatus: 204,
     }));
     
     // OPTIONS 요청에 대한 명시적 처리
-    this.app.options('*', (req, res) => {
-      res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-      res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS,PATCH');
-      res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin,Cache-Control,X-File-Name');
-      res.header('Access-Control-Allow-Credentials', 'true');
-      res.sendStatus(204);
-    });
+    // this.app.options('/(.*)/', (req, res) => {
+    //   res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+    //   res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS,PATCH');
+    //   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin,Cache-Control,X-File-Name');
+    //   res.header('Access-Control-Allow-Credentials', 'true');
+    //   res.sendStatus(204);
+    // });
     
     this.app.use(
       express.json({
