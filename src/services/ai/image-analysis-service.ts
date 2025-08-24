@@ -55,19 +55,25 @@ class ImageAnalysisService {
       // 1단계: 이미지 분석으로 기본 정보 추출
       console.log('step 1.');
       const { extractedWords, situationAnalysis } = await this.analyzeImage(imageBase64);
+      console.log(extractedWords);
+      console.log(situationAnalysis);
 
       // 2단계: 학습 데이터 컨텍스트 구성
+      console.log('step 2');
       const learningContext = dataContextBuilder.buildLearningContext(
         situationAnalysis.situation,
         extractedWords.map(w => w.word)
       );
+      console.log(learningContext);
 
       // 3단계: GPT로 상황에 맞는 예문 및 시나리오 생성
+      console.log('step 3');
       const { generatedExamples, scenario } = await this.generateSituationalExamples(
         situationAnalysis,
         extractedWords,
         learningContext
       );
+      console.log(scenario);
 
       return {
         extractedWords,
@@ -86,6 +92,7 @@ class ImageAnalysisService {
     extractedWords: ExtractedWord[];
     situationAnalysis: SituationAnalysis;
   }> {
+    console.log('starting');
     const response = await this.openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
@@ -130,6 +137,7 @@ class ImageAnalysisService {
       ],
       // max_completion_tokens: 2000,
     });
+    console.log(response.choices[0].message);
     const content = response.choices[0]?.message?.content;
     if (!content) {
       throw new Error('OpenAI 응답이 비어있습니다');
@@ -160,6 +168,7 @@ class ImageAnalysisService {
     generatedExamples: GeneratedExample[];
     scenario: Scenario;
   }> {
+    console.log('starting');
     const prompt = `${learningContext}
 
 위의 영어 학습 자료를 참고하여, 다음 상황에 맞는 실용적인 영어 예문들을 생성해주세요:
@@ -209,6 +218,7 @@ class ImageAnalysisService {
       ],
     });
 
+    console.log(response.choices[0].message);
     const content = response.choices[0]?.message?.content;
     if (!content) {
       throw new Error('예문 생성 응답이 비어있습니다');
