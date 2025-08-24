@@ -192,7 +192,8 @@ class DataContextBuilder {
       '여행': ['travel', 'trip', 'vacation', 'hotel'],
       '운동': ['exercise', 'sport', 'health', 'fitness'],
       '요리': ['cooking', 'food', 'kitchen', 'recipe'],
-      '병원': ['hospital', 'doctor', 'health', 'medicine']
+      '병원': ['hospital', 'doctor', 'health', 'medicine'],
+      '대홰': ['fastival', 'hackathon', 'junction']
     };
 
     Object.entries(koreanMappings).forEach(([korean, englishWords]) => {

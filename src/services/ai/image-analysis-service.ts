@@ -53,6 +53,7 @@ class ImageAnalysisService {
   async analyzeImageAndGenerateExamples(imageBase64: string): Promise<ImageAnalysisResult> {
     try {
       // 1단계: 이미지 분석으로 기본 정보 추출
+      console.log('step 1.');
       const { extractedWords, situationAnalysis } = await this.analyzeImage(imageBase64);
 
       // 2단계: 학습 데이터 컨텍스트 구성
@@ -86,7 +87,7 @@ class ImageAnalysisService {
     situationAnalysis: SituationAnalysis;
   }> {
     const response = await this.openai.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-4o",
       messages: [
         {
           role: "user",
@@ -95,7 +96,7 @@ class ImageAnalysisService {
               type: "text",
               text: `이미지를 분석해서 다음 정보를 JSON 형태로 제공해주세요:
 
-1. 이미지에서 보이는 모든 영어 단어나 텍스트를 추출하고, 각 단어의 대략적인 위치 좌표(x, y)를 이미지 크기 기준 픽셀로 표시
+1. 이미지에서 보이는 우리 생활에는 자주 보이는데 크게 말할 일이 없어서 몰랐을만한 사물(가로등, 전봇대 등등 이미지를 전체적으로 모두 살펴보며)들을 추출하고, 각 단어의 대략적인 위치 좌표(x, y)를 이미지 크기 기준 픽셀로 표시
 2. 이미지의 상황/맥락을 분석하여 어떤 상황인지, 어떤 주제와 관련이 있는지 설명
 
 응답 형식:
@@ -127,9 +128,8 @@ class ImageAnalysisService {
           ]
         }
       ],
-      max_completion_tokens: 2000,
+      // max_completion_tokens: 2000,
     });
-
     const content = response.choices[0]?.message?.content;
     if (!content) {
       throw new Error('OpenAI 응답이 비어있습니다');
@@ -200,14 +200,13 @@ class ImageAnalysisService {
 }`;
 
     const response = await this.openai.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-4o",
       messages: [
         {
           role: "user",
           content: prompt
         }
       ],
-      max_completion_tokens: 3000,
     });
 
     const content = response.choices[0]?.message?.content;
