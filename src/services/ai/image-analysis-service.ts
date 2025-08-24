@@ -110,7 +110,7 @@ class ImageAnalysisService {
 {
   "extractedWords": [
     {
-      "word": "영어단어",
+      "word": "영어 단어 (영어로 작성해야 합니다)",
       "ko": "한국어 단어",
       "x": 50,
       "y": 30,
@@ -119,7 +119,8 @@ class ImageAnalysisService {
   ],
   "situationAnalysis": {
     "situation": "상황 설명",
-    "context": "맥락 설명", 
+    "context": "영어 맥락 설명",
+    "koContext": "한글 맥락 설명",
     "relevantTopics": ["관련주제1", "관련주제2"]
   }
 }
